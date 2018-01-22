@@ -183,6 +183,7 @@ def delete_nsg(template):
                     dependencies.pop(j)
                     break
         # Delete any dependency on the NSG for Custom VNet
+
         if resource_type == 'Microsoft.Network/networkInterfaces' or resource_type == 'Microsoft.Network/loadBalancers':
             dependencies = resources[i]['dependsOn']
             for j in range(len(dependencies)):
